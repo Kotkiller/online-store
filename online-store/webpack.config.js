@@ -9,9 +9,11 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
     mode: 'development',
    devtool: 'inline-source-map',
    devServer: {
-    contentBase: 'dist',
+    static: {
+      directory: path.join(__dirname, 'src'),
+    },
     compress: true,
-    port:8080
+    port: 9000,
   },
     module: {
       rules: [
