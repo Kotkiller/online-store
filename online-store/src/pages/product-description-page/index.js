@@ -67,11 +67,30 @@ var cartTotalSum = document.querySelector('.cart-total-amount__sum');
 var cartAmount = document.querySelector('.product-count');
 cartAmount.textContent = "".concat(cart.getAmount());
 var bigImageDiv = document.querySelector(".product-detail__big-image");
+var smallImageDiv = document.querySelector(".product-detail__small-images");
 var bigImage = document.createElement('img');
 bigImage.src = product.images[0];
 bigImage.alt = 'product image';
 bigImage.className = 'product-big-image';
 bigImageDiv === null || bigImageDiv === void 0 ? void 0 : bigImageDiv.appendChild(bigImage);
+var _loop_1 = function (i) {
+    var tumbsImage = document.createElement('img');
+    tumbsImage.src = product.images[i];
+    tumbsImage.alt = "product small image ".concat(i);
+    tumbsImage.className = 'product-small-image';
+    tumbsImage.addEventListener('click', function () {
+        bigImageDiv === null || bigImageDiv === void 0 ? void 0 : bigImageDiv.removeChild(bigImageDiv.firstChild);
+        bigImage.src = tumbsImage.src;
+        bigImage.alt = 'product image';
+        bigImage.className = 'product-big-image';
+        bigImageDiv === null || bigImageDiv === void 0 ? void 0 : bigImageDiv.appendChild(bigImage);
+    });
+    smallImageDiv === null || smallImageDiv === void 0 ? void 0 : smallImageDiv.appendChild(tumbsImage);
+};
+// Add tumbs
+for (var i = 0; i < product.images.length; i += 1) {
+    _loop_1(i);
+}
 var addButton = document.querySelector('.product-detail-order__cart-operation');
 addButton.addEventListener('click', function () {
     if (addButton.textContent === 'ADD TO CART') {

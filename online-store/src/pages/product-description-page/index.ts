@@ -86,11 +86,29 @@ const cartAmount = document.querySelector('.product-count');
 cartAmount.textContent = `${cart.getAmount()}`;
 
 const bigImageDiv = document.querySelector(".product-detail__big-image");
+const smallImageDiv = document.querySelector(".product-detail__small-images");
+
 const bigImage = document.createElement('img');
 bigImage.src = product.images[0];
 bigImage.alt = 'product image';
 bigImage.className = 'product-big-image';
 bigImageDiv?.appendChild(bigImage);
+// Add tumbs
+for (let i: number = 0; i < product.images.length; i += 1) {
+  const tumbsImage = document.createElement('img');
+  tumbsImage.src = product.images[i];
+  tumbsImage.alt = `product small image ${i}`;
+  tumbsImage.className = 'product-small-image';
+
+  tumbsImage.addEventListener('click', () => {
+    bigImageDiv?.removeChild(bigImageDiv.firstChild);
+    bigImage.src = tumbsImage.src;
+    bigImage.alt = 'product image';
+    bigImage.className = 'product-big-image';
+    bigImageDiv?.appendChild(bigImage);
+  })
+  smallImageDiv?.appendChild(tumbsImage);
+}
 
 const addButton = document.querySelector('.product-detail-order__cart-operation');
 addButton.addEventListener('click', () => {

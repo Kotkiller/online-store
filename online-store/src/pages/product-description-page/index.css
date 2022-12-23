@@ -105,6 +105,13 @@ body {
 .product-detail__title {
   text-align: center;
 }
+.product-detail__small-images {
+  display: flex;
+  flex-direction: column;
+}
+.product-small-image {
+  width: 100px;
+}
 .product-big-image {
   width: 90%;
 }
