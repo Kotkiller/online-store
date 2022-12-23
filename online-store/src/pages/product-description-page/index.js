@@ -61,3 +61,23 @@ productInfo.children[2].children[1].textContent = product.rating;
 productInfo.children[3].children[1].textContent = product.stock;
 productInfo.children[4].children[1].textContent = product.brand;
 productInfo.children[5].children[1].textContent = product.category;
+var price = document.querySelector('.product-detail-order__price');
+price.textContent = product.price;
+var cartTotalSum = document.querySelector('.cart-total-amount__sum');
+var cartAmount = document.querySelector('.product-count');
+cartAmount.textContent = "".concat(cart.getAmount());
+var addButton = document.querySelector('.product-detail-order__cart-operation');
+addButton.addEventListener('click', function () {
+    if (addButton.textContent === 'ADD TO CART') {
+        cart.addAmount();
+        cart.addSum(product.price);
+        addButton.textContent = 'DROP TO CART';
+    }
+    else {
+        cart.removeAmount();
+        cart.removeSum(product.price);
+        addButton.textContent = 'ADD TO CART';
+    }
+    cartAmount.textContent = "".concat(cart.getAmount());
+    cartTotalSum.textContent = "$".concat(cart.getSum());
+});

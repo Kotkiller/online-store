@@ -41,7 +41,7 @@ body {
   text-shadow: 0 0 10px rgb(88 68 68), 0 0 5px red, 0 0 10px red, 0 0 15px red;
 }
 
-.span {
+.cart-total-amount__sum {
   color: white;
 }
 
@@ -59,11 +59,11 @@ body {
 }
 
 .product-count {
-  color: orange;
-  position: absolute;
-  text-shadow: 0 0 10px rgb(88 68 68), 0 0 5px red, 0 0 10px red, 0 0 15px red;
-  right: 155px;
   top: -5px;
+  right: 30px;
+  color: orange;
+  position: relative;
+  text-shadow: 0 0 10px rgb(88 68 68), 0 0 5px red, 0 0 10px red, 0 0 15px red;
   font-size: 26px;
 }
 
@@ -104,6 +104,13 @@ body {
 }
 .product-detail__title {
   text-align: center;
+}
+.product-detail__order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px;
+  padding: 25px; 
 }
 
 .footer {
