@@ -30,8 +30,36 @@ class Product {
     ]
   }
 }
+class Cart {
+  amount: number;
+  sum: number;
+
+  constructor() {
+    this.amount = 0;
+    this.sum = 0;
+  }
+  addAmount() {
+    this.amount += 1;
+  }
+  removeAmount() {
+    this.amount -= 1;
+  }
+  addSum(value: number) {
+    this.sum += value;
+  }
+  removeSum(value: number) {
+    this.sum -= value;
+  }
+  getAmount() {
+    return this.amount;
+  }
+  getSum() {
+    return this.sum;
+  }
+}
 const Store: string = 'STORE';
 const product: any = new Product;
+const cart = new Cart;
 
 const breadCrumbs = document.querySelector('.link-navigation');
 breadCrumbs.children[0].textContent = Store;

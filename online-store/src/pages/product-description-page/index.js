@@ -19,8 +19,34 @@ var Product = /** @class */ (function () {
     }
     return Product;
 }());
+var Cart = /** @class */ (function () {
+    function Cart() {
+        this.amount = 0;
+        this.sum = 0;
+    }
+    Cart.prototype.addAmount = function () {
+        this.amount += 1;
+    };
+    Cart.prototype.removeAmount = function () {
+        this.amount -= 1;
+    };
+    Cart.prototype.addSum = function (value) {
+        this.sum += value;
+    };
+    Cart.prototype.removeSum = function (value) {
+        this.sum -= value;
+    };
+    Cart.prototype.getAmount = function () {
+        return this.amount;
+    };
+    Cart.prototype.getSum = function () {
+        return this.sum;
+    };
+    return Cart;
+}());
 var Store = 'STORE';
 var product = new Product;
+var cart = new Cart;
 var breadCrumbs = document.querySelector('.link-navigation');
 breadCrumbs.children[0].textContent = Store;
 breadCrumbs.children[2].textContent = product.category;
