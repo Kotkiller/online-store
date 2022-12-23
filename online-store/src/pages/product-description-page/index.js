@@ -66,6 +66,12 @@ price.textContent = product.price;
 var cartTotalSum = document.querySelector('.cart-total-amount__sum');
 var cartAmount = document.querySelector('.product-count');
 cartAmount.textContent = "".concat(cart.getAmount());
+var bigImageDiv = document.querySelector(".product-detail__big-image");
+var bigImage = document.createElement('img');
+bigImage.src = product.images[0];
+bigImage.alt = 'product image';
+bigImage.className = 'product-big-image';
+bigImageDiv === null || bigImageDiv === void 0 ? void 0 : bigImageDiv.appendChild(bigImage);
 var addButton = document.querySelector('.product-detail-order__cart-operation');
 addButton.addEventListener('click', function () {
     if (addButton.textContent === 'ADD TO CART') {

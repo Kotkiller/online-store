@@ -105,6 +105,9 @@ body {
 .product-detail__title {
   text-align: center;
 }
+.product-big-image {
+  width: 90%;
+}
 .product-detail__order {
   display: flex;
   flex-direction: column;

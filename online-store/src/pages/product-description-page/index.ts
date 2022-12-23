@@ -85,6 +85,13 @@ const cartTotalSum = document.querySelector('.cart-total-amount__sum');
 const cartAmount = document.querySelector('.product-count');
 cartAmount.textContent = `${cart.getAmount()}`;
 
+const bigImageDiv = document.querySelector(".product-detail__big-image");
+const bigImage = document.createElement('img');
+bigImage.src = product.images[0];
+bigImage.alt = 'product image';
+bigImage.className = 'product-big-image';
+bigImageDiv?.appendChild(bigImage);
+
 const addButton = document.querySelector('.product-detail-order__cart-operation');
 addButton.addEventListener('click', () => {
   if (addButton.textContent === 'ADD TO CART') {
