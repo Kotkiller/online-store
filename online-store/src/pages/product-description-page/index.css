@@ -91,7 +91,6 @@ body {
 }
 
 .product-detail {
-    display: flex;
     width: 80%;
     min-height:70vh;
     background-color: red;
@@ -99,6 +98,12 @@ body {
     margin: 0 auto;
     background-color: yellow;
     border: 1px solid black;
+}
+.product-detail__content {
+  display: flex;
+}
+.product-detail__title {
+  text-align: center;
 }
 
 .footer {

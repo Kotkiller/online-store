@@ -66,3 +66,14 @@ breadCrumbs.children[0].textContent = Store;
 breadCrumbs.children[2].textContent = product.category;
 breadCrumbs.children[4].textContent = product.brand;
 breadCrumbs.children[6].textContent = product.title;
+
+const productTitle = document.querySelector('.product-detail__title');
+productTitle.textContent = product.title;
+
+const productInfo = document.querySelector('.product-detail__info');
+productInfo.children[0].children[1].textContent = product.description;
+productInfo.children[1].children[1].textContent = product.discountPercentage;
+productInfo.children[2].children[1].textContent = product.rating;
+productInfo.children[3].children[1].textContent = product.stock;
+productInfo.children[4].children[1].textContent = product.brand;
+productInfo.children[5].children[1].textContent = product.category;
