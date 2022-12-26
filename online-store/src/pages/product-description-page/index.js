@@ -8,11 +8,10 @@ var Product = /** @class */ (function () {
             this.rating = 4.69,
             this.stock = 94,
             this.brand = "Apple",
-            this.category = "smartphones",
+            this.category = "Smartphones",
             this.thumbs = "https://i.dummyjson.com/data/products/1/thumbnail.jpg";
         this.images = [
             "https://i.dummyjson.com/data/products/1/1.jpg",
-            "https://i.dummyjson.com/data/products/1/2.jpg",
             "https://i.dummyjson.com/data/products/1/3.jpg",
             "https://i.dummyjson.com/data/products/1/4.jpg",
         ];
@@ -48,10 +47,10 @@ var Store = 'STORE';
 var product = new Product;
 var cart = new Cart;
 var breadCrumbs = document.querySelector('.link-navigation');
-breadCrumbs.children[0].textContent = Store;
-breadCrumbs.children[2].textContent = product.category;
-breadCrumbs.children[4].textContent = product.brand;
-breadCrumbs.children[6].textContent = product.title;
+breadCrumbs.children[0].textContent = Store.toUpperCase();
+breadCrumbs.children[2].textContent = product.category.toUpperCase();
+breadCrumbs.children[4].textContent = product.brand.toUpperCase();
+breadCrumbs.children[6].textContent = product.title.toUpperCase();
 var productTitle = document.querySelector('.product-detail__title');
 productTitle.textContent = product.title;
 var productInfo = document.querySelector('.product-detail__info');
@@ -62,7 +61,7 @@ productInfo.children[3].children[1].textContent = product.stock;
 productInfo.children[4].children[1].textContent = product.brand;
 productInfo.children[5].children[1].textContent = product.category;
 var price = document.querySelector('.product-detail-order__price');
-price.textContent = product.price;
+price.textContent = "$" + product.price;
 var cartTotalSum = document.querySelector('.cart-total-amount__sum');
 var cartAmount = document.querySelector('.product-count');
 cartAmount.textContent = "".concat(cart.getAmount());
