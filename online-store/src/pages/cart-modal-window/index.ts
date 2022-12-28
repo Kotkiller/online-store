@@ -3,6 +3,7 @@ const customerName = <HTMLInputElement>form.elements[0];
 const customerPhone = <HTMLInputElement>form.elements[1];
 const customerAddress = <HTMLInputElement>form.elements[2];
 const customerEmail = <HTMLInputElement>form.elements[3];
+const cardNumber = <HTMLInputElement>form.elements[4];
 
 // checks for customer name field
 customerName.addEventListener('focus', () => {
@@ -59,4 +60,12 @@ customerEmail.addEventListener('blur', () => {
   console.log(login);
   console.log(service);
   console.log(domain);
+})
+
+cardNumber.addEventListener('focus', () => {
+})
+cardNumber.addEventListener('blur', () => {
+  const numberValue: string = cardNumber.value;
+  if (numberValue.length < 16) console.log('card number less than 16 numbers');
+  if (isNaN(Number(numberValue))) console.log('card number must contain only numbers'); 
 })

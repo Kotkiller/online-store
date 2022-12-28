@@ -3,6 +3,7 @@ var customerName = form.elements[0];
 var customerPhone = form.elements[1];
 var customerAddress = form.elements[2];
 var customerEmail = form.elements[3];
+var cardNumber = form.elements[4];
 // checks for customer name field
 customerName.addEventListener('focus', function () {
 });
@@ -83,4 +84,14 @@ customerEmail.addEventListener('blur', function () {
     console.log(login);
     console.log(service);
     console.log(domain);
+});
+cardNumber.addEventListener('focus', function () {
+});
+cardNumber.addEventListener('blur', function () {
+    var numberValue = cardNumber.value;
+    console.log(numberValue);
+    if (numberValue.length < 16)
+        console.log('card number less than 16 numbers');
+    if (isNaN(Number(numberValue)))
+        console.log('card number must contain only numbers');
 });
