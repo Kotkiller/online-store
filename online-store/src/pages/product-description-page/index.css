@@ -13,7 +13,7 @@ body {
   min-height: 10vh;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #181a1c;;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   border-bottom: 1px solid orange;
@@ -219,7 +219,7 @@ body {
     min-height: 5vh;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #181a1c;;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-top: 1px solid orange;
