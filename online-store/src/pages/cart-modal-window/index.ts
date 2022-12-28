@@ -6,6 +6,7 @@ const customerEmail = <HTMLInputElement>form.elements[3];
 const cardNumber = <HTMLInputElement>form.elements[4];
 const cardValidity = <HTMLInputElement>form.elements[5];
 const cardCvv = <HTMLInputElement>form.elements[6];
+const confirmButton = form.elements[7];
 
 // checks for customer name field
 customerName.addEventListener('focus', () => {
@@ -86,4 +87,7 @@ cardCvv.addEventListener('blur', () => {
   const cvv: string = cardCvv.value;
   if (cvv.length < 3) console.log('card cvv less than 3 numbers');
   if (isNaN(Number(cvv))) console.log('card cvv must be a number'); 
+})
+confirmButton.addEventListener('click', () => {
+  console.log('Confirm click');
 })
