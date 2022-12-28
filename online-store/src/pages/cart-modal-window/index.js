@@ -1,7 +1,8 @@
 var form = document.forms[0];
 var customerName = form.elements[0];
 var customerPhone = form.elements[1];
-console.log(customerPhone);
+var customerAddress = form.elements[2];
+// checks for customer name field
 customerName.addEventListener('focus', function () {
 });
 customerName.addEventListener('blur', function () {
@@ -31,11 +32,19 @@ customerPhone.addEventListener('blur', function () {
     if (isNaN(Number(phone.slice(1)))) {
         console.log('phone number must contain only symbols');
     }
-    /*
-    if (customerArray.length < 2) {
-      console.log('Customer name error! (2 words or more)');
+});
+// checks for customer address
+customerAddress.addEventListener('focus', function () {
+});
+customerAddress.addEventListener('blur', function () {
+    var address = customerAddress.value;
+    var addressArray = address.split(' ');
+    if (addressArray.length < 3) {
+        console.log('Customer address error! (3 words or more)');
     }
-    for (const item of customerArray) {
-      if (item.length < 3) console.log('Customer name error! (word\'s length more than 3 symbol)');
-    }*/
+    for (var _i = 0, addressArray_1 = addressArray; _i < addressArray_1.length; _i++) {
+        var item = addressArray_1[_i];
+        if (item.length < 5)
+            console.log('Customer name error! (word\'s length more than 5 symbol)');
+    }
 });
