@@ -2,6 +2,7 @@ const form = document.forms[0];
 const customerName = <HTMLInputElement>form.elements[0];
 const customerPhone = <HTMLInputElement>form.elements[1];
 const customerAddress = <HTMLInputElement>form.elements[2];
+const customerEmail = <HTMLInputElement>form.elements[3];
 
 // checks for customer name field
 customerName.addEventListener('focus', () => {
@@ -36,4 +37,26 @@ customerAddress.addEventListener('blur', () => {
   for (const item of addressArray) {
     if (item.length < 5) console.log('Customer name error! (word\'s length more than 5 symbol)');
   }
+})
+// checks for customer e-mail
+customerEmail.addEventListener('focus', () => {
+})
+customerEmail.addEventListener('blur', () => {
+  const email: string = customerEmail.value;
+  if (email.indexOf(' ') != -1) {console.log('email don\'t contain spaces');}
+  const loginPos = email.indexOf('@');
+  let login: string = '';
+  if (email.indexOf('@') === -1) {console.log('email must contain @');}
+  else {login = email.slice(0, loginPos);}
+  const servicePos: number = email.lastIndexOf('.');
+  let service: string = '';
+  if (email.indexOf('.') === -1) {console.log('email don\'t contain dot');}
+  else {service = email.slice(loginPos + 1, servicePos);}
+  let domain = email.slice(servicePos + 1);
+  if (domain === '') {console.log('domain can\'t be empty');}
+  else {domain = email.slice(servicePos + 1);}
+  
+  console.log(login);
+  console.log(service);
+  console.log(domain);
 })

@@ -2,6 +2,7 @@ var form = document.forms[0];
 var customerName = form.elements[0];
 var customerPhone = form.elements[1];
 var customerAddress = form.elements[2];
+var customerEmail = form.elements[3];
 // checks for customer name field
 customerName.addEventListener('focus', function () {
 });
@@ -47,4 +48,39 @@ customerAddress.addEventListener('blur', function () {
         if (item.length < 5)
             console.log('Customer name error! (word\'s length more than 5 symbol)');
     }
+});
+// checks for customer e-mail
+customerEmail.addEventListener('focus', function () {
+});
+customerEmail.addEventListener('blur', function () {
+    var email = customerEmail.value;
+    if (email.indexOf(' ') != -1) {
+        console.log('email don\'t contain spaces');
+    }
+    var loginPos = email.indexOf('@');
+    var login = '';
+    if (email.indexOf('@') === -1) {
+        console.log('email must contain @');
+    }
+    else {
+        login = email.slice(0, loginPos);
+    }
+    var servicePos = email.lastIndexOf('.');
+    var service = '';
+    if (email.indexOf('.') === -1) {
+        console.log('email don\'t contain dot');
+    }
+    else {
+        service = email.slice(loginPos + 1, servicePos);
+    }
+    var domain = email.slice(servicePos + 1);
+    if (domain === '') {
+        console.log('domain can\'t be empty');
+    }
+    else {
+        domain = email.slice(servicePos + 1);
+    }
+    console.log(login);
+    console.log(service);
+    console.log(domain);
 });
