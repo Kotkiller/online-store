@@ -53,6 +53,11 @@ body {
   height: 50px;
 }
 
+.cart a img {
+  width: 50px;
+  height: 50px;
+}
+
 .cart img {
   width: 100%;
   height: 100%;
@@ -69,7 +74,7 @@ body {
 }
 
 .main {
-  min-height: 78vh;
+  min-height: 79.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,7 +108,7 @@ body {
     background-color: red;
     border-radius: 15px;
     margin: 0 auto;
-    background-color: #835708;
+    background: rgba(24, 26, 28, 0.5);
     border: 1px solid orange;
 }
 
