@@ -4,6 +4,7 @@ var customerPhone = form.elements[1];
 var customerAddress = form.elements[2];
 var customerEmail = form.elements[3];
 var cardNumber = form.elements[4];
+var cardValidity = form.elements[5];
 // checks for customer name field
 customerName.addEventListener('focus', function () {
 });
@@ -85,13 +86,24 @@ customerEmail.addEventListener('blur', function () {
     console.log(service);
     console.log(domain);
 });
+// check card number
 cardNumber.addEventListener('focus', function () {
 });
 cardNumber.addEventListener('blur', function () {
     var numberValue = cardNumber.value;
-    console.log(numberValue);
     if (numberValue.length < 16)
         console.log('card number less than 16 numbers');
     if (isNaN(Number(numberValue)))
         console.log('card number must contain only numbers');
+});
+// check card validity
+cardValidity.addEventListener('focus', function () {
+});
+cardValidity.addEventListener('blur', function () {
+    var validity = cardValidity.value;
+    console.log(validity);
+    if (validity.length < 4)
+        console.log('card validity less than 4 numbers');
+    if (Number(validity.slice(0, 2)) > 12)
+        console.log('month\'s number bigger than 12');
 });
