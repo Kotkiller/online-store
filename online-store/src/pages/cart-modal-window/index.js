@@ -5,6 +5,7 @@ var customerAddress = form.elements[2];
 var customerEmail = form.elements[3];
 var cardNumber = form.elements[4];
 var cardValidity = form.elements[5];
+var cardCvv = form.elements[6];
 // checks for customer name field
 customerName.addEventListener('focus', function () {
 });
@@ -101,9 +102,18 @@ cardValidity.addEventListener('focus', function () {
 });
 cardValidity.addEventListener('blur', function () {
     var validity = cardValidity.value;
-    console.log(validity);
     if (validity.length < 4)
         console.log('card validity less than 4 numbers');
     if (Number(validity.slice(0, 2)) > 12)
         console.log('month\'s number bigger than 12');
+});
+// check card cvv
+cardCvv.addEventListener('focus', function () {
+});
+cardCvv.addEventListener('blur', function () {
+    var cvv = cardCvv.value;
+    if (cvv.length < 3)
+        console.log('card cvv less than 3 numbers');
+    if (isNaN(Number(cvv)))
+        console.log('card cvv must be a number');
 });
