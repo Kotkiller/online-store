@@ -2,7 +2,9 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #3f1010;
+  background-image: url(../../assets/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow-x: hidden;
   font-family: 'Philosopher', sans-serif;
 }
@@ -85,7 +87,7 @@ body {
   width: 95%;
   display: flex;
   justify-content: space-between;
-  min-height: 80vh;
+  height: fit-content;
   margin-top: 30px;
 }
 

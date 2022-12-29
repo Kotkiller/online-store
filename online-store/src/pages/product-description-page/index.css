@@ -86,8 +86,8 @@ body {
   width: 80%;
   display: flex;
   justify-content: center;
-  min-height:65vh;
   flex-direction: column;
+  height: fit-content;
 }
 
 .link-navigation {
