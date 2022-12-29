@@ -1,3 +1,16 @@
+const byuNowButton=document.querySelector('#buy');
+const modalArea=document.querySelector('.modal');
+const modalContent=document.querySelector('.modal-content')
+
+byuNowButton.addEventListener('click', () => {
+    modalArea.classList.add('modal-active');
+    modalContent.classList.add('modal-content-active')
+    modalArea.addEventListener('click', () => {
+    modalArea.classList.remove('modal-active')
+    modalContent.classList.remove('modal-content-active')
+    })
+})
+
 var form = document.forms[0];
 var customerName = form.elements[0];
 var customerPhone = form.elements[1];
