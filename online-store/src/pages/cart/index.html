@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap"
+      rel="stylesheet"
+    />
+    <title>Online store</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <a class="logo" href="../../pages/main-page/index.html">Online Store</a>
+        </div>
+        <div class="cart-total">
+          <h2 class="cart-total-amount">
+            Cart-total: <span class="cart-total-amount__sum">$0.00</span>
+          </h2>
+        </div>
+        <div class="cart">
+          <a href="../../pages/cart/index.html"><img src="../../assets/cart.png" alt="cart" /></a>
+          <span class="product-count">0</span>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main-content">
+        <div class="products-in-cart">
+            <div class="title-and-page-control">
+              <h2>Products In Cart</h2> 
+              <div class="page-control">
+                <div class="limit">
+                    LIMIT: 
+                    <input type="number" min="1" max="12">
+                </div>
+                <div class="page-numbers">
+                  PAGE: 
+                  <button> < </button>
+                  <span> 1 </span>
+                  <button> > </button>
+                </div>
+              </div>
+            </div> 
+            <div class="prod-items">
+              <div class="cart-item-wrapper">
+              <div class="cart-item">
+                <div class="item-i"> 1 </div>
+                <div class="item-info">
+                    <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="image">
+                    <div class="item-detail-p">
+                        <div class="product-title">
+                            <h2>iPhone 9</h2>
+                        </div>
+                        <div class="product-description"> An apple mobile which is nothing like apple </div>
+                        <div class="product-other">
+                            <div class="rating">Rating: 4.69</div>
+                            <div class="discount">Discount: 12.96%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="number-control">
+                    <div class="stock-control">Stock: 94 </div>
+                    <div class="incDec-control">
+                        <button> + </button>
+                        1
+                        <button> - </button>
+                    </div>
+                    <div class="amount-control">$549.00 </div>
+                </div>
+              </div>
+            </div>
+            <div class="cart-item-wrapper">
+              <div class="cart-item">
+                <div class="item-i"> 1 </div>
+                <div class="item-info">
+                    <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="image">
+                    <div class="item-detail-p">
+                        <div class="product-title">
+                            <h2>iPhone 9</h2>
+                        </div>
+                        <div class="product-description"> An apple mobile which is nothing like apple </div>
+                        <div class="product-other">
+                            <div class="rating">Rating: 4.69</div>
+                            <div class="discount">Discount: 12.96%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="number-control">
+                    <div class="stock-control">Stock: 94 </div>
+                    <div class="incDec-control">
+                        <button> + </button>
+                        1
+                        <button> - </button>
+                    </div>
+                    <div class="amount-control">$549.00 </div>
+                </div>
+              </div>
+            </div>
+            <div class="cart-item-wrapper">
+              <div class="cart-item">
+                <div class="item-i"> 1 </div>
+                <div class="item-info">
+                    <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="image">
+                    <div class="item-detail-p">
+                        <div class="product-title">
+                            <h2>iPhone 9</h2>
+                        </div>
+                        <div class="product-description"> An apple mobile which is nothing like apple </div>
+                        <div class="product-other">
+                            <div class="rating">Rating: 4.69</div>
+                            <div class="discount">Discount: 12.96%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="number-control">
+                    <div class="stock-control">Stock: 94 </div>
+                    <div class="incDec-control">
+                        <button> + </button>
+                        1
+                        <button> - </button>
+                    </div>
+                    <div class="amount-control">$549.00 </div>
+                </div>
+              </div>
+            </div>
+            </div>  
+        </div>
+        <div class="total-cart">
+            <h2>Summary</h2>
+            <div class="total-price">
+                <span>Products:</span>
+                12                
+            </div>
+            <div class="total-price">
+                <span>Total: </span>
+                $1000.00
+            </div>
+            <div class="promo-code">
+                <input type="search" placeholder="Enter promo code" class="promo-code-input">
+            </div>
+            <span class="promo-ex">Promo for test: 'RS', 'EPM'</span>
+            <button>BUY NOW</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <a href="https://github.com/Kotkiller/" target="_blank"
+          ><img class="github" src="../../assets/github.svg" alt="github"
+        /></a>
+        <h2 class="copyright">Online Store 2022</h2>
+        <a href="https://rs.school/js/" target="_blank"
+          ><img class="rss" src="../../assets/rss.svg" alt="rss"
+        /></a>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
