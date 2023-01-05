@@ -1,4 +1,4 @@
-const form = document.forms[0];
+/*const form = document.forms[0];
 const customerName = <HTMLInputElement>form.elements[0];
 const customerPhone = <HTMLInputElement>form.elements[1];
 const customerAddress = <HTMLInputElement>form.elements[2];
@@ -90,4 +90,4 @@ cardCvv.addEventListener('blur', () => {
 })
 confirmButton.addEventListener('click', () => {
   console.log('Confirm click');
-})
+})*/

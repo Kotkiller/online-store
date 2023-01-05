@@ -1,4 +1,4 @@
-class Product {
+/*class Product {
   id: number;
   title: string;
   description: string;
@@ -124,4 +124,4 @@ addButton.addEventListener('click', () => {
   }
   cartAmount.textContent = `${cart.getAmount()}`;
   cartTotalSum.textContent = `$${cart.getSum()}`;
-})
+})*/
