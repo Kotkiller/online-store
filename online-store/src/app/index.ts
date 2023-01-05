@@ -4,13 +4,13 @@ import CartPage from '../cart-page';
 import StatisticsPage from '../product-description-page';
 import Header from '../../core/components/header';
 import ErrorPage from '../404-page';
-
+*/
 export const enum PageIds {
   MainPage = 'main-page',
   CartPage = 'cart-page',
   ProductDescriptionPage = 'product-description-page',
 }
-*/
+
 class App {
 /*  private static container: HTMLElement = document.body;
   private static defaultPageId: string = 'current-page';
