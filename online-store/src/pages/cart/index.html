@@ -146,54 +146,85 @@
                 <input type="search" placeholder="Enter promo code" class="promo-code-input">
             </div>
             <span class="promo-ex">Promo for test: 'RS', 'EPM'</span>
-            <button>BUY NOW</button>
+            <button id="buy">BUY NOW</button>
         </div>
       </div>
     </main>
-   <!-- <div class="modal">
-     <div class="modal-content">
-        <form id="form" class="form">
-            <h2 class="title">Personal details</h2>
-            <div class="input-details">
-                <input type="text" class="personal-details" placeholder="Name" name="customer-name"> 
-            <div class="error-message"> error </div>
-            </div>
-            <div class="input-details">
-            <input type="tel" class="personal-details" placeholder="Phone number">
-            <div class="error-message"> error </div>
+    <div class="modal"></div>
+    <div class="modal-content">
+      <form id="form" class="form">
+        <h2 class="title">Personal details</h2>
+        <div class="input-details">
+          <input
+            type="text"
+            class="personal-details"
+            placeholder="Name"
+            name="customer-name"
+          />
+          <div class="name-error-message ">error</div>
         </div>
         <div class="input-details">
-            <input type="text" class="personal-details" placeholder="Delivery address">
-            <div class="error-message"> error </div>
+          <input
+            type="tel"
+            class="personal-details"
+            placeholder="Phone number"
+          />
+          <div class="phone-error-message">error</div>
         </div>
         <div class="input-details">
-            <input type="email" class="personal-details" placeholder="E-mail">
-            <div class="error-message"> error </div>
+          <input
+            type="text"
+            class="personal-details"
+            placeholder="Delivery address"
+          />
+          <div class="address-error-message">error</div>
         </div>
-            <h2 class="title">Credit card details</h2>
-            <div class="card-data">
-                <div class="number">
-                    <img src="../../assets/visa_logo.png" alt="">
-                    <input type="text" placeholder="Card number" >
-                </div>
-                <div class="other-data">
-                    <div class="valid-data">
-                        VALID: 
-                        <input type="text" placeholder="Valid Thru" >
-                    </div>
-                    <div class="cvv-data">
-                        CVV: 
-                        <input type="text" placeholder="Code" >
-                    </div>
-                </div>
+        <div class="input-details">
+          <input type="email" class="personal-details" placeholder="E-mail" />
+          <div class="email-error-message">error</div>
+        </div>
+        <h2 class="title">Credit card details</h2>
+        <div class="card-data">
+          <div class="number">
+            <img
+              class="bank-logo"
+              src="../../assets/nologo.webp"
+              alt="visa"
+            />
+            <input
+              class="card-details"
+              type="text"
+              placeholder="Card number"
+              name="card-number"
+            />
+          </div>
+          <div class="other-data">
+            <div class="valid-data">
+              VALID:
+              <input
+                class="card-details"
+                type="text"
+                placeholder="Valid Thru"
+                name="card-validity"
+              />
             </div>
-            <div class="card-err"> Card number - error </div>
-            <div class="card-err">  Card valid thru - error  </div>
-            <div class="card-err">  Card CVV - error  </div>
-            <button type="submit">CONFIRM</button>
-          </form> -->
-     <!-- </div>
-   </div> -->
+            <div class="cvv-data">
+              CVV:
+              <input
+                class="card-details"
+                type="text"
+                placeholder="Code"
+                name="card-cvv"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="number-card-err">Card number - error</div>
+        <div class="thru-card-err">Card valid thru - error</div>
+        <div class="cvv-card-err">Card CVV - error</div>
+        <button class="confirm-button">CONFIRM</button>
+      </form>
+    </div>
     <footer class="footer">
       <div class="footer-content">
         <a href="https://github.com/Kotkiller/" target="_blank"
