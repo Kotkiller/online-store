@@ -1,0 +1,140 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-image: url(../../assets/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  min-height: 10vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #181a1c;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom: 1px solid orange;
+  border-left: 1px solid orange;
+  border-right: 1px solid orange;
+}
+
+.header-content {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: orange;
+  text-shadow: 0 0 10px rgb(88 68 68), 0 0 5px red, 0 0 10px red, 0 0 15px red;
+  text-decoration: none;
+  font-size: 26px;
+  margin-left: 0;
+}
+
+.cart-total-amount {
+  color: orange;
+  text-shadow: 0 0 10px rgb(88 68 68), 0 0 5px red, 0 0 10px red, 0 0 15px red;
+}
+
+.cart-total-amount__sum {
+  color: wheat;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+.cart a img {
+  width: 50px;
+  height: 50px;
+}
+
+.cart img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.product-count {
+  top: -5px;
+  right: 30px;
+  color: orange;
+  position: relative;
+  text-shadow: 0 0 10px rgb(88 68 68), 0 0 5px red, 0 0 10px red, 0 0 15px red;
+  font-size: 26px;
+}
+
+.main {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main-content {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content h2 {
+  font-size: 250%;
+  background: #181a1c;
+  padding: 1rem;
+  border: 2px solid orange;
+  border-radius: 1rem;
+  color: orange;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  min-height: 5vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #181a1c;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-top: 1px solid orange;
+  border-left: 1px solid orange;
+  border-right: 1px solid orange;
+}
+
+.footer-content {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.rss {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.copyright {
+  color: orange;
+  text-shadow: 0 0 10px rgb(88 68 68), 0 0 5px red, 0 0 10px red, 0 0 15px red;
+}
