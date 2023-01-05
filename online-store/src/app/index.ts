@@ -1,6 +1,6 @@
-/*import Page from '../../core/templates/page';
-import MainPage from '../main-page';
-import CartPage from '../cart-page';
+import Page from '../common/page';
+import MainPage from '../pages/main-page';
+/*import CartPage from '../cart-page';
 import StatisticsPage from '../product-description-page';
 import Header from '../../core/components/header';
 import ErrorPage from '../404-page';
@@ -12,9 +12,9 @@ export const enum PageIds {
 }
 
 class App {
-/*  private static container: HTMLElement = document.body;
+  private static container: HTMLElement = document.body;
   private static defaultPageId: string = 'current-page';
-  private header: Header;
+//  private header: Header;
 
   static renderNewPage(idPage: string) {
     const currentPageHTML = document.querySelector(`#${App.defaultPageId}`);
@@ -25,14 +25,14 @@ class App {
 
     if (idPage === PageIds.MainPage) {
       page = new MainPage(idPage);
-    } else if (idPage === PageIds.CartPage) {
+    }/* else if (idPage === PageIds.CartPage) {
       page = new CartPage(idPage);
     } else if (idPage === PageIds.ProductDescriptionPage) {
       page = new StatisticsPage(idPage);
     } else {
       page = new ErrorPage(idPage);
     }
-
+*/
     if (page) {
       const pageHTML = page.render();
       pageHTML.id = App.defaultPageId;
@@ -44,7 +44,7 @@ class App {
     } else if (idPage === PageIds.CartPage) {
       
     } else if (idPage === PageIds.ProductDescriptionPage) {
-      App.showProductData();
+      //App.showProductData();
     }
   }
 
@@ -55,7 +55,7 @@ class App {
     });
   }
 
-  private static showProductData() {
+  /*private static showProductData() {
     class Product {
       id: number;
       title: string;
@@ -189,16 +189,16 @@ class App {
       })
     }
   }
-
-  constructor() {
-    this.header = new Header('header', 'header-container');
-  }
 */
+  constructor() {
+  //  this.header = new Header('header', 'header-container');
+  }
+
   run() {
     console.log('run App');
   //  App.container.append(this.header.render());
-  //  App.renderNewPage('main-page');
-  //  this.enableRouteChange();
+    App.renderNewPage('main-page');
+    this.enableRouteChange();
   }
 }
 
