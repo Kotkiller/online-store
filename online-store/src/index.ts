@@ -1,5 +1,5 @@
 import './style.css';
-//import App from './pages/app/';
+import App from './app/';
 
-//const app = new App();
-//app.run();
+const app = new App();
+app.run();
