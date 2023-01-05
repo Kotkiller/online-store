@@ -2,9 +2,9 @@ import Page from '../common/page';
 import MainPage from '../pages/main-page';
 /*import CartPage from '../cart-page';
 import StatisticsPage from '../product-description-page';
-import Header from '../../core/components/header';
-import ErrorPage from '../404-page';
-*/
+import Header from '../../core/components/header';*/
+import ErrorPage from '../pages/404-page';
+
 export const enum PageIds {
   MainPage = 'main-page',
   CartPage = 'cart-page',
@@ -29,10 +29,10 @@ class App {
       page = new CartPage(idPage);
     } else if (idPage === PageIds.ProductDescriptionPage) {
       page = new StatisticsPage(idPage);
-    } else {
+    } */else {
       page = new ErrorPage(idPage);
     }
-*/
+
     if (page) {
       const pageHTML = page.render();
       pageHTML.id = App.defaultPageId;
