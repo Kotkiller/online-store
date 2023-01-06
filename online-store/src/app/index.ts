@@ -1,6 +1,6 @@
 import Page from '../common/page';
 import MainPage from '../pages/main-page';
-//import CartPage from '../cart-page';
+import CartPage from '../pages/cart';
 import ProductDescriptionPage from '../pages/product-description-page';
 //import Header from '../../core/components/header';*/
 import ErrorPage from '../pages/404-page';
@@ -25,9 +25,9 @@ class App {
 
     if (idPage === PageIds.MainPage) {
       page = new MainPage(idPage);
-    }/* else if (idPage === PageIds.CartPage) {
+    } else if (idPage === PageIds.CartPage) {
       page = new CartPage(idPage);
-    }*/ else if (idPage === PageIds.ProductDescriptionPage) {
+    } else if (idPage === PageIds.ProductDescriptionPage) {
       page = new ProductDescriptionPage(idPage);
     } else {
       page = new ErrorPage(idPage);
