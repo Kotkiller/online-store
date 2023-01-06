@@ -1,2 +1,5 @@
-import './style.css'
-import './index.html'
+import './style.css';
+import App from './app/';
+
+const app = new App();
+app.run();
