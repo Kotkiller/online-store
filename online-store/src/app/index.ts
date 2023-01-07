@@ -4,6 +4,7 @@ import CartPage from '../pages/cart';
 import ProductDescriptionPage from '../pages/product-description-page';
 //import Header from '../../core/components/header';*/
 import ErrorPage from '../pages/404-page';
+import Goods from '../common/goods';
 
 export const enum PageIds {
   MainPage = 'main-page',
@@ -40,7 +41,7 @@ class App {
     }
 
     if (idPage === PageIds.MainPage) {
-      
+      App.showProductList();
     } else if (idPage === PageIds.CartPage) {
       
     } else if (idPage === PageIds.ProductDescriptionPage) {
@@ -53,6 +54,66 @@ class App {
       const hash = window.location.hash.slice(1);
       App.renderNewPage(hash);
     });
+  }
+
+  private static showProductList() {
+    const containerDiv = document.querySelector('.product-items');
+
+    for (const item of Goods) {
+      const itemCard = document.createElement('div');
+      itemCard.className = 'big-item-card';
+      const itemWrapper = document.createElement('div');
+      itemWrapper.className = 'item-wrapper';
+      itemWrapper.style.background = `url(${item.thumbs}) 0% 0%/cover`;
+      console.log(`url(${item.thumbs}) 0% 0%/cover`);
+      itemCard.append(itemWrapper);
+      const itemText = document.createElement('div');
+      itemText.className = 'item-text';
+      itemWrapper.append(itemText);
+      const itemTitle = document.createElement('div');
+      itemTitle.className = "item-title";
+      itemTitle.textContent = item.title;
+      itemText.append(itemTitle);
+      const itemInfo = document.createElement('div');
+      itemInfo.className = "item-info";
+      itemText.append(itemInfo);
+      const itemInfoItem = document.createElement('div');
+      itemInfoItem.className = "item-info-item";
+      itemInfo.append(itemInfoItem);
+
+      const category = document.createElement('p');
+      category.innerHTML = `<span>Category: </span>${item.category}`;
+      itemInfoItem.append(category);
+      const brand = document.createElement('p');
+      brand.innerHTML = `<span>Brand: </span>${item.brand}`;
+      itemInfoItem.append(brand);
+      const price = document.createElement('p');
+      price.innerHTML = `<span>Price: </span>${item.price}`;
+      itemInfoItem.append(price);
+      const discount = document.createElement('p');
+      discount.innerHTML = `<span>Discount: </span>${item.discountPercentage}`;
+      itemInfoItem.append(discount);
+      const rating = document.createElement('p');
+      rating.innerHTML = `<span>Rating: </span>${item.rating}`;
+      itemInfoItem.append(rating);
+      const stock = document.createElement('p');
+      stock.innerHTML = `<span>Stock: </span>${item.stock}`;
+      itemInfoItem.append(stock);
+
+      const itemButtons = document.createElement('div');
+      itemButtons.className = 'item-buttons';
+      itemWrapper.append(itemButtons);
+      const addToCartButton = document.createElement('button');
+      addToCartButton.className = 'add-to-cart-button';
+      addToCartButton.textContent = 'ADD TO CART';
+      itemButtons.append(addToCartButton);
+      const detailsButton = document.createElement('button');
+      detailsButton.className = 'details-button';
+      detailsButton.textContent = 'DETAILS';
+      itemButtons.append(detailsButton);
+     
+      containerDiv?.append(itemCard);
+    }
   }
 
   private static showProductData() {

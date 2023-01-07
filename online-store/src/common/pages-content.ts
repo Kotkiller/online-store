@@ -581,45 +581,6 @@ const PagesContent = {
             </div>
           </div>
           <div class="product-items">
-            <div class="big-item-card">
-              <div class="item-wrapper">
-                <div class="item-text">
-                  <div class="item-title"> FREE FIRE T Shirt </div>
-                  <div class="item-info">
-                    <div class="item-info-item">
-                      <p>
-                        <span>Category: </span>
-                        mens-shirts
-                      </p>
-                      <p>
-                        <span>Brand: </span>
-                        FREE FIRE
-                      </p>
-                      <p>
-                        <span>Price: </span>
-                        $10
-                      </p>
-                      <p>
-                        <span>Discount: </span>
-                        14.72%
-                      </p>
-                      <p>
-                        <span>Rating: </span>
-                        4.52
-                      </p>
-                      <p>
-                        <span>Stock: </span>
-                        128
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item-buttons">
-                  <button class="add-to-cart-button">ADD TO CART</button>
-                  <button class="details-button"><a href="../product-description-page/index.html">DETAILS</a></button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
