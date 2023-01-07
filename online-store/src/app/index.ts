@@ -65,7 +65,6 @@ class App {
       const itemWrapper = document.createElement('div');
       itemWrapper.className = 'item-wrapper';
       itemWrapper.style.background = `url(${item.thumbs}) 0% 0%/cover`;
-      console.log(`url(${item.thumbs}) 0% 0%/cover`);
       itemCard.append(itemWrapper);
       const itemText = document.createElement('div');
       itemText.className = 'item-text';
@@ -111,7 +110,13 @@ class App {
       detailsButton.className = 'details-button';
       detailsButton.textContent = 'DETAILS';
       itemButtons.append(detailsButton);
-     
+      detailsButton.addEventListener('click', () => {
+        const currentURL = document.URL;
+        let newURL = currentURL.slice(0, currentURL.lastIndexOf('/'));
+        newURL += `/#${PageIds.ProductDescriptionPage}`;
+        document.location = newURL;
+      })
+
       containerDiv?.append(itemCard);
     }
   }
