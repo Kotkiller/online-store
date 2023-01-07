@@ -2,9 +2,9 @@ import Page from '../common/page';
 import MainPage from '../pages/main-page';
 import CartPage from '../pages/cart';
 import ProductDescriptionPage from '../pages/product-description-page';
-//import Header from '../../core/components/header';*/
 import ErrorPage from '../pages/404-page';
 import Goods from '../common/goods';
+import Product from '../common/product';
 
 export const enum PageIds {
   MainPage = 'main-page',
@@ -15,6 +15,23 @@ export const enum PageIds {
 class App {
   private static container: HTMLElement = document.body;
   private static defaultPageId: string = 'current-page';
+  private static currentProduct: Product = {
+    id: 1,
+    title: "iPhone 9",
+    description: "An apple mobile which is nothing like apple",
+    price: 549,
+    discountPercentage: 12.96,
+    rating: 4.69,
+    stock: 94,
+    brand: "Apple",
+    category: "smartphones",
+    thumbs: "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+    images: [
+    "https://i.dummyjson.com/data/products/1/1.jpg",
+    "https://i.dummyjson.com/data/products/1/2.jpg",
+    "https://i.dummyjson.com/data/products/1/3.jpg",
+    "https://i.dummyjson.com/data/products/1/4.jpg",]
+  };
 //  private header: Header;
 
   static renderNewPage(idPage: string) {
@@ -56,6 +73,10 @@ class App {
     });
   }
 
+  static setCurrentProduct(product: Product) {
+    this.currentProduct = product;
+  }
+
   private static showProductList() {
     const containerDiv = document.querySelector('.product-items');
 
@@ -65,7 +86,6 @@ class App {
       const itemWrapper = document.createElement('div');
       itemWrapper.className = 'item-wrapper';
       itemWrapper.style.background = `url(${item.thumbs}) 0% 0%/cover`;
-      console.log(`url(${item.thumbs}) 0% 0%/cover`);
       itemCard.append(itemWrapper);
       const itemText = document.createElement('div');
       itemText.className = 'item-text';
@@ -111,44 +131,32 @@ class App {
       detailsButton.className = 'details-button';
       detailsButton.textContent = 'DETAILS';
       itemButtons.append(detailsButton);
-     
+      detailsButton.addEventListener('click', () => {
+        const currentProduct: Product = {
+          id: item.id,
+          title: item.title,
+          description: item.description,
+          price: item.price,
+          discountPercentage: item.discountPercentage,
+          rating: item.rating,
+          stock: item.stock,
+          brand: item.brand,
+          category: item.category,
+          thumbs: item.thumbs,
+          images: item.images,
+        }
+        App.setCurrentProduct(currentProduct);
+        const currentURL = document.URL;
+        let newURL = currentURL.slice(0, currentURL.lastIndexOf('/'));
+        newURL += `/#${PageIds.ProductDescriptionPage}`;
+        document.location = newURL;
+      })
+
       containerDiv?.append(itemCard);
     }
   }
 
   private static showProductData() {
-    class Product {
-      id: number;
-      title: string;
-      description: string;
-      price: number;
-      discountPercentage: number;
-      rating: number;
-      stock: number;
-      brand: string;
-      category: string;
-      thumbs: string;
-      images: string[];
-    
-      constructor() {
-        this.id = 1,
-        this.title = "iPhone 9",
-        this.description = "An apple mobile which is nothing like apple",
-        this.price = 549,
-        this.discountPercentage = 12.96,
-        this.rating = 4.69,
-        this.stock = 94,
-        this.brand = "Apple",
-        this.category = "smartphones",
-        this.thumbs = "https://i.dummyjson.com/data/products/1/thumbnail.jpg";
-        this.images = [
-          "https://i.dummyjson.com/data/products/1/1.jpg",
-          "https://i.dummyjson.com/data/products/1/2.jpg",
-          "https://i.dummyjson.com/data/products/1/3.jpg",
-          "https://i.dummyjson.com/data/products/1/4.jpg",
-        ]
-      }
-    }
     class Cart {
       amount: number;
       sum: number;
@@ -177,31 +185,30 @@ class App {
       }
     }
     const Store: string = 'STORE';
-    const product: any = new Product;
     const cart = new Cart;
     
     const breadCrumbs = document.querySelector('.link-navigation');
     if (breadCrumbs != null) {
       breadCrumbs.children[0].textContent = Store;
-      breadCrumbs.children[2].textContent = product.category;
-      breadCrumbs.children[4].textContent = product.brand;
-      breadCrumbs.children[6].textContent = product.title;
+      breadCrumbs.children[2].textContent = App.currentProduct.category;
+      breadCrumbs.children[4].textContent = App.currentProduct.brand;
+      breadCrumbs.children[6].textContent = App.currentProduct.title;
     }
     const productTitle = document.querySelector('.product-detail__title');
     if (productTitle) {
-      productTitle.textContent = product.title;
+      productTitle.textContent = App.currentProduct.title;
     }
     const productInfo = document.querySelector('.product-detail__info');
     if (productInfo) {
-      productInfo.children[0].children[1].textContent = product.description;
-      productInfo.children[1].children[1].textContent = product.discountPercentage;
-      productInfo.children[2].children[1].textContent = product.rating;
-      productInfo.children[3].children[1].textContent = product.stock;
-      productInfo.children[4].children[1].textContent = product.brand;
-      productInfo.children[5].children[1].textContent = product.category;
+      productInfo.children[0].children[1].textContent = App.currentProduct.description;
+      productInfo.children[1].children[1].textContent = String(App.currentProduct.discountPercentage);
+      productInfo.children[2].children[1].textContent = String(App.currentProduct.rating);
+      productInfo.children[3].children[1].textContent = String(App.currentProduct.stock);
+      productInfo.children[4].children[1].textContent = App.currentProduct.brand;
+      productInfo.children[5].children[1].textContent = App.currentProduct.category;
     }
     const price: HTMLElement|null = document.querySelector('.product-detail-order__price');
-      price!.textContent = product.price;
+    price!.textContent = String(App.currentProduct.price);
     const cartTotalSum = document.querySelector('.cart-total-amount__sum');
     const cartAmount = document.querySelector('.product-count');
     if (cartAmount != null) {
@@ -211,14 +218,14 @@ class App {
     const smallImageDiv = document.querySelector(".product-detail__small-images");
     
     const bigImage = document.createElement('img');
-    bigImage.src = product.images[0];
+    bigImage.src = App.currentProduct.images[0];
     bigImage.alt = 'product image';
     bigImage.className = 'product-big-image';
     bigImageDiv?.appendChild(bigImage);
     // Add tumbs
-    for (let i: number = 0; i < product.images.length; i += 1) {
+    for (let i: number = 0; i < App.currentProduct.images.length; i += 1) {
       const tumbsImage = document.createElement('img');
-      tumbsImage.src = product.images[i];
+      tumbsImage.src = App.currentProduct.images[i];
       tumbsImage.alt = `product small image ${i}`;
       tumbsImage.className = 'product-small-image';
     
@@ -237,12 +244,12 @@ class App {
       addButton.addEventListener('click', () => {
         if (addButton.textContent === 'ADD TO CART') {
           cart.addAmount();
-          cart.addSum(product.price);
+          cart.addSum(App.currentProduct.price);
           addButton.textContent = 'DROP TO CART'
         }
         else {
           cart.removeAmount();
-          cart.removeSum(product.price);
+          cart.removeSum(App.currentProduct.price);
           addButton.textContent = 'ADD TO CART';
         }
         cartAmount!.textContent = `${cart.getAmount()}`;
@@ -252,7 +259,6 @@ class App {
   }
 
   constructor() {
-  //  this.header = new Header('header', 'header-container');
   }
 
   run() {
