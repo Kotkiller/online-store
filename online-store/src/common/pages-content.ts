@@ -4,7 +4,7 @@ const PagesContent = {
 <header class="header">
       <div class="header-content">
         <div class="logo">
-          <a class="logo" href="./index.html">Online Store</a>
+          <a class="logo" href="#main-page">Online Store</a>
         </div>
         <div class="cart-total">
           <h2 class="cart-total-amount">
@@ -12,17 +12,17 @@ const PagesContent = {
           </h2>
         </div>
         <div class="cart">
-          <a href="../../pages/cart/index.html"><img src="../../assets/cart.png" alt="cart"/></a>
+          <a href="#cart-page"><img src="../../assets/cart.png" alt="cart"/></a>
           <span class="product-count">0</span>
         </div>
       </div>
     </header>
-    <main class="main">
-      <div class="main-content">
+    <main class="main_main">
+      <div class="main-content_main">
         <aside class="filters">
           <div class="reset-copy">
-            <button class="button">Reset Filters</button>
-            <button class="button">Copy Link</button>
+            <button class="button-filters">Reset Filters</button>
+            <button class="button-filters">Copy Link</button>
           </div>
           <div class="filter-by-category">
             <h2 class="category">Category</h2>
@@ -602,7 +602,7 @@ const PagesContent = {
 <header class="header">
 <div class="header-content">
   <div class="logo">
-    <a class="logo" href="../../pages/main-page/index.html">Online Store</a>
+    <a class="logo" href="#main-page">Online Store</a>
   </div>
   <div class="cart-total">
     <h2 class="cart-total-amount">
@@ -610,14 +610,14 @@ const PagesContent = {
     </h2>
   </div>
   <div class="cart">
-    <a href="../../pages/cart/index.html"><img src="../../assets/cart.png" alt="cart" /></a>
+    <a href="#cart-page"><img src="../../assets/cart.png" alt="cart" /></a>
     <span class="product-count">0</span>
   </div>
 </div>
 </header>
-<main class="main">
-<div class="main-content">
-  <div class="products-in-cart">
+<main class="main-cart">
+<div class="main-content-cart_cart">
+  <div class="products-in-cart_cart">
       <div class="title-and-page-control">
         <h2>Products In Cart</h2> 
         <div class="page-control">
@@ -752,19 +752,19 @@ productDescriptionPage:
 <header class="header">
 <div class="header-content">
 <div class="logo">
-    <a class="logo" href="../main-page/index.html">Online Store</a>
+    <a class="logo" href="#main-page">Online Store</a>
 </div>
 <div class="cart-total">
     <h2 class="cart-total-amount">Cart-total: <span class="cart-total-amount__sum">$0.00</span> </h2>
 </div>
 <div class="cart">
-  <a href="../../pages/cart/index.html"><img src="../../assets/cart.png" alt="cart" /></a>
+  <a href="#cart-page"><img src="../../assets/cart.png" alt="cart" /></a>
     <span class="product-count">0</span>
 </div>
 </div>
 </header>
-<main class="main">
-<div class="main-content">
+<main class="main-cart">
+<div class="main-content-cart">
     <div class="link-navigation">
         <span></span>
         <span>>></span>
@@ -774,7 +774,7 @@ productDescriptionPage:
         <span>>></span>
         <span></span>
     </div>
-    <div class="product-detail">
+    <div class="product-detail-cart">
         <h1 class="product-detail__title"></h1>
         <div class="product-detail__content">
             <div class="product-detail__small-images"></div>
@@ -807,7 +807,7 @@ productDescriptionPage:
               </div>
             </div>
             <div class="product-detail__order">
-              <span class="product-detail-order__price"></span>
+              <span class="product-detail-order__price"> $ </span>
               <button class="product-detail-order__cart-operation button">ADD TO CART</button>
               <button class="product-detail-order__buy button">BUY NOW</button>
             </div>
@@ -829,7 +829,7 @@ ErrorPage:
 <header class="header">
       <div class="header-content">
         <div class="logo">
-          <a class="logo" href="../main-page/index.html">Online Store</a>
+          <a class="logo" href="#main-page">Online Store</a>
         </div>
         <div class="cart-total">
           <h2 class="cart-total-amount">
@@ -837,7 +837,7 @@ ErrorPage:
           </h2>
         </div>
         <div class="cart">
-          <a href="../../pages/cart/index.html"><img src="../../assets/cart.png" alt="cart"/></a>
+          <a href="#cart-page"><img src="../../assets/cart.png" alt="cart"/></a>
           <span class="product-count">0</span>
         </div>
       </div>

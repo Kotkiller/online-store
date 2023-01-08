@@ -75,7 +75,7 @@ body {
   font-size: 26px;
 }
 
-.main {
+.main_main {
   min-height: 85vh;
   display: flex;
   justify-content: center;
@@ -83,7 +83,7 @@ body {
   width: 100%;
 }
 
-.main-content {
+.main-content_main {
   width: 95%;
   display: flex;
   justify-content: space-between;
@@ -99,7 +99,8 @@ body {
   justify-content: center;
   flex-direction: column;
   padding-top: 5px;
-  background-color: rgba(24, 26, 28, 0.5);;
+  background-color: rgba(24, 26, 28, 0.5);
+  height: fit-content;
 }
 
 .reset-copy {
@@ -109,7 +110,7 @@ body {
   margin-bottom: 2%;
 }
 
-.button {
+.button-filters {
   background-color: #181a1c;
   border: 1px solid orange;
   border-radius: 0.3rem;
@@ -360,19 +361,17 @@ input[type='range'] {
 }
 
 .product-items {
-  padding: 0.5%;
+  padding-top: 0.5%;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
 }
 
 .big-item-card {
   width: 23%;
-  height: 28.5%;
+  height: 190px;
   position: relative;
-  margin: 1%;
+  margin: 0.7%;
   border: 1px solid orange;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -381,8 +380,6 @@ input[type='range'] {
 }
 
 .item-wrapper {
-  background: url(https://i.dummyjson.com/data/products/52/thumbnail.jpg) 0% 0% /
-    cover;
   width: 100%;
   height: 100%;
   display: flex;
@@ -449,7 +446,7 @@ input[type='range'] {
   cursor: pointer;
   color: orange;
   font-family: 'Philosopher', sans-serif;
-  width: 105px;
+  width: 115px;
   height: 28px;
 }
 
@@ -460,9 +457,11 @@ input[type='range'] {
   background-color: #181a1c;
   border: 1px solid orange;
   border-radius: 0.3rem;
-  width: 62px;
+  width: 70px;
   height: 28px;
   font-size: 90%;
+  color: orange;
+  cursor: pointer;
 }
 
 .details-button a {
@@ -471,7 +470,6 @@ input[type='range'] {
   font-family: 'Philosopher', sans-serif;
   cursor: pointer;
 }
-
 
 .footer {
   display: flex;
