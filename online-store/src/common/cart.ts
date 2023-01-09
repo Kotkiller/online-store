@@ -3,7 +3,7 @@ import Product from "./product";
 class Cart {
   private amount: number;
   private sum: number;
-  private goods: Product[];
+  public goods: Product[];
 
   constructor() {
     this.amount = 0;

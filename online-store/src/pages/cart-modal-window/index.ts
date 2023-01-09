@@ -1,5 +1,7 @@
 /*const form = document.forms[0];
 const customerName = <HTMLInputElement>form.elements[0];
+const customerNameError = document.querySelector('error-message-name');
+
 const customerPhone = <HTMLInputElement>form.elements[1];
 const customerAddress = <HTMLInputElement>form.elements[2];
 const customerEmail = <HTMLInputElement>form.elements[3];
@@ -15,12 +17,18 @@ customerName.addEventListener('blur', () => {
   const customer: string = customerName.value;
   const customerArray: string[] = customer.split(' ');
   if (customerArray.length < 2) {
-    console.log('Customer name error! (2 words or more)');
+    customerNameError!.textContent = 'Error';
+  } else {
+    customerNameError!.textContent = '';
   }
   for (const item of customerArray) {
-    if (item.length < 3) console.log('Customer name error! (word\'s length more than 3 symbol)');
+    if (item.length < 3) {
+      customerNameError!.textContent = 'Error';
+    } else {
+      customerNameError!.textContent = '';
+    }
   }
-})
+})/*
 // checks for customer phone number field
 customerPhone.addEventListener('focus', () => {
 })
