@@ -12,7 +12,7 @@ const PagesContent = {
           </h2>
         </div>
         <div class="cart">
-          <a href="#cart-page"><img src="../../assets/cart.png" alt="cart"/></a>
+          <img src="../../assets/cart.png" alt="cart"/>
           <span class="product-count">0</span>
         </div>
       </div>
@@ -634,87 +634,6 @@ const PagesContent = {
         </div>
       </div> 
       <div class="prod-items">
-        <div class="cart-item-wrapper">
-        <div class="cart-item">
-          <div class="item-i"> 1 </div>
-          <div class="item-info">
-              <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="image">
-              <div class="item-detail-p">
-                  <div class="product-title">
-                      <h2>iPhone 9</h2>
-                  </div>
-                  <div class="product-description"> An apple mobile which is nothing like apple </div>
-                  <div class="product-other">
-                      <div class="rating">Rating: 4.69</div>
-                      <div class="discount">Discount: 12.96%</div>
-                  </div>
-              </div>
-          </div>
-          <div class="number-control">
-              <div class="stock-control">Stock: 94 </div>
-              <div class="incDec-control">
-                  <button> + </button>
-                  1
-                  <button> - </button>
-              </div>
-              <div class="amount-control">$549.00 </div>
-          </div>
-        </div>
-      </div>
-      <div class="cart-item-wrapper">
-        <div class="cart-item">
-          <div class="item-i"> 1 </div>
-          <div class="item-info">
-              <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="image">
-              <div class="item-detail-p">
-                  <div class="product-title">
-                      <h2>iPhone 9</h2>
-                  </div>
-                  <div class="product-description"> An apple mobile which is nothing like apple </div>
-                  <div class="product-other">
-                      <div class="rating">Rating: 4.69</div>
-                      <div class="discount">Discount: 12.96%</div>
-                  </div>
-              </div>
-          </div>
-          <div class="number-control">
-              <div class="stock-control">Stock: 94 </div>
-              <div class="incDec-control">
-                  <button> + </button>
-                  1
-                  <button> - </button>
-              </div>
-              <div class="amount-control">$549.00 </div>
-          </div>
-        </div>
-      </div>
-      <div class="cart-item-wrapper">
-        <div class="cart-item">
-          <div class="item-i"> 1 </div>
-          <div class="item-info">
-              <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="image">
-              <div class="item-detail-p">
-                  <div class="product-title">
-                      <h2>iPhone 9</h2>
-                  </div>
-                  <div class="product-description"> An apple mobile which is nothing like apple </div>
-                  <div class="product-other">
-                      <div class="rating">Rating: 4.69</div>
-                      <div class="discount">Discount: 12.96%</div>
-                  </div>
-              </div>
-          </div>
-          <div class="number-control">
-              <div class="stock-control">Stock: 94 </div>
-              <div class="incDec-control">
-                  <button> + </button>
-                  1
-                  <button> - </button>
-              </div>
-              <div class="amount-control">$549.00 </div>
-          </div>
-        </div>
-      </div>
       </div>  
   </div>
   <div class="total-cart">

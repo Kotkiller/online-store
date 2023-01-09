@@ -50,6 +50,9 @@ class Cart {
     }  
     return false; 
   }
+  getCart() {
+    return this.goods;
+  }
 }
 
 export default Cart;

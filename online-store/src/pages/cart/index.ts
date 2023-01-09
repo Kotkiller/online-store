@@ -7,11 +7,6 @@ class CartPage extends Page {
     super(id);
   }
 
-  addData() {
-    const Store: string = 'STORE';
-    console.log(Store);
-  }
-
   render() {
     this.container.innerHTML = PagesContent.cartPage;
     return this.container;
