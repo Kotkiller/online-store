@@ -288,17 +288,6 @@ class App {
     }
   }
 
-  /*
-            
-          <div class="number-control">
-             
-              <div class="incDec-control">
-                  <button> + </button>
-                  1
-                  <button> - </button>
-              </div>
-              
-  */
   private static showCartList() {
     const containerDiv = document.querySelector('.prod-items');
     let counter: number = 1;
@@ -317,7 +306,6 @@ class App {
       const itemInfo = document.createElement('div');
       itemInfo.className = "item-info";
       cartItem.append(itemInfo);
-     //<img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="image">
       const thumbImage = new Image();
       thumbImage.src = item.thumbs;
       thumbImage.alt = "image";
@@ -367,6 +355,7 @@ class App {
       amountControl.textContent = `$${item.price}`;
       numberControl.append(amountControl);
     
+      this.showHeaderInfo();
 /*
       const category = document.createElement('p');
       category.innerHTML = `<span>Category: </span>${item.category}`;
