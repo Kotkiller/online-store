@@ -62,7 +62,7 @@ class App {
       App.showProductList();
       App.showHeaderInfo();
     } else if (idPage === PageIds.CartPage) {
-      
+      App.showCartList();
     } else if (idPage === PageIds.ProductDescriptionPage) {
       App.showProductData();
     }
@@ -88,6 +88,13 @@ class App {
 
   private static showProductList() {
     const containerDiv = document.querySelector('.product-items');
+    const cartRef = document.querySelector('.cart');
+    cartRef?.addEventListener('click', () => {
+      const currentURL = document.URL;
+      let newURL = currentURL.slice(0, currentURL.lastIndexOf('/'));
+      newURL += `/#${PageIds.CartPage}`;
+      document.location = newURL;
+    })
 
     for (const item of Goods) {
       const itemCard = document.createElement('div');
@@ -134,7 +141,6 @@ class App {
       itemWrapper.append(itemButtons);
       const addToCartButton = document.createElement('button');
       addToCartButton.className = 'add-to-cart-button';
-      //addToCartButton.textContent = 'ADD TO CART';
       if (App.cart.isInCart(item.id)) {
         addToCartButton.textContent = 'DROP TO CART'
       } else {
@@ -279,6 +285,172 @@ class App {
         cartAmount!.textContent = `${App.cart.getAmount()}`;
         cartTotalSum!.textContent = `$${App.cart.getSum()}`;
       })
+    }
+  }
+
+  /*
+            
+          <div class="number-control">
+             
+              <div class="incDec-control">
+                  <button> + </button>
+                  1
+                  <button> - </button>
+              </div>
+              
+  */
+  private static showCartList() {
+    const containerDiv = document.querySelector('.prod-items');
+    let counter: number = 1;
+    for (const item of App.cart.getCart()) {
+      const cartItemWrapper = document.createElement('div');
+      cartItemWrapper.className = 'cart-item-wrapper';
+      containerDiv?.append(cartItemWrapper);
+      const cartItem = document.createElement('div');
+      cartItem.className = 'cart-item';
+      cartItemWrapper.append(cartItem);
+      const itemI = document.createElement('div');
+      itemI.className = 'item-i';
+      itemI.textContent = counter.toString();
+      counter += 1;
+      cartItem.append(itemI);
+      const itemInfo = document.createElement('div');
+      itemInfo.className = "item-info";
+      cartItem.append(itemInfo);
+     //<img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="image">
+      const thumbImage = new Image();
+      thumbImage.src = item.thumbs;
+      thumbImage.alt = "image";
+      itemInfo.append(thumbImage); 
+      const itemDetailP = document.createElement('div');
+      itemDetailP.className = "item-detail-p";
+      itemInfo.append(itemDetailP);
+      const productTitle = document.createElement('div');
+      productTitle.className = "product-title";
+      itemDetailP.append(productTitle);
+      const itemTitle = document.createElement('h2');
+      itemTitle.textContent = item.title;
+      productTitle.append(itemTitle);
+      const productDescription = document.createElement('div');
+      productDescription.className = "product-description";
+      productDescription.textContent = item.description;
+      itemDetailP.append(productDescription);
+      const productOther = document.createElement('div');
+      productOther.className = "product-other";
+      itemDetailP.append(productOther);
+      const rating = document.createElement('div');
+      rating.className = "rating";
+      rating.textContent = item.rating.toString();
+      productOther.append(rating);
+      const discount = document.createElement('div');
+      discount.className = "discount";
+      discount.textContent = item.discountPercentage.toString();
+      productOther.append(discount);
+      const numberControl = document.createElement('div');
+      numberControl.className = "number-control";
+      cartItem.append(numberControl);
+      const stockControl = document.createElement('div');
+      stockControl.className = "stock-control";
+      stockControl.textContent = item.stock.toString();
+      numberControl.append(stockControl);
+      const incDecControl = document.createElement('div');
+      incDecControl.className = "incDec-control";
+      numberControl.append(incDecControl);
+      const buttonPlus = document.createElement('button');
+      buttonPlus.textContent = '+';
+      incDecControl.append(buttonPlus);
+      const buttonMinus = document.createElement('button');
+      buttonMinus.textContent = '-';
+      incDecControl.append(buttonMinus);
+      const amountControl = document.createElement('div');
+      amountControl.className = "amount-control";
+      amountControl.textContent = `$${item.price}`;
+      numberControl.append(amountControl);
+    
+/*
+      const category = document.createElement('p');
+      category.innerHTML = `<span>Category: </span>${item.category}`;
+      itemInfoItem.append(category);
+      const brand = document.createElement('p');
+      brand.innerHTML = `<span>Brand: </span>${item.brand}`;
+      itemInfoItem.append(brand);
+      const price = document.createElement('p');
+      price.innerHTML = `<span>Price: </span>${item.price}`;
+      itemInfoItem.append(price);
+      const discount = document.createElement('p');
+      discount.innerHTML = `<span>Discount: </span>${item.discountPercentage}`;
+      itemInfoItem.append(discount);
+      const rating = document.createElement('p');
+      rating.innerHTML = `<span>Rating: </span>${item.rating}`;
+      itemInfoItem.append(rating);
+      const stock = document.createElement('p');
+      stock.innerHTML = `<span>Stock: </span>${item.stock}`;
+      itemInfoItem.append(stock);
+
+      const itemButtons = document.createElement('div');
+      itemButtons.className = 'item-buttons';
+      itemWrapper.append(itemButtons);
+      const addToCartButton = document.createElement('button');
+      addToCartButton.className = 'add-to-cart-button';
+      //addToCartButton.textContent = 'ADD TO CART';
+      if (App.cart.isInCart(item.id)) {
+        addToCartButton.textContent = 'DROP TO CART'
+      } else {
+        addToCartButton.textContent = 'ADD TO CART';
+      }
+      itemButtons.append(addToCartButton);
+      addToCartButton.addEventListener('click', () => {
+        const currentProduct: Product = {
+          id: item.id,
+          title: item.title,
+          description: item.description,
+          price: item.price,
+          discountPercentage: item.discountPercentage,
+          rating: item.rating,
+          stock: item.stock,
+          brand: item.brand,
+          category: item.category,
+          thumbs: item.thumbs,
+          images: item.images,
+        }
+        if (addToCartButton.textContent === 'ADD TO CART') {
+          App.cart.addAmount();
+          App.cart.addSum(currentProduct.price);
+          addToCartButton.textContent = 'DROP TO CART'
+          App.cart.addProduct(currentProduct);
+        }
+        else {
+          App.cart.removeAmount();
+          App.cart.removeSum(currentProduct.price);
+          addToCartButton.textContent = 'ADD TO CART';
+          App.cart.removeProduct(currentProduct.id);
+        }
+        App.showHeaderInfo();
+      })
+      const detailsButton = document.createElement('button');
+      detailsButton.className = 'details-button';
+      detailsButton.textContent = 'DETAILS';
+      itemButtons.append(detailsButton);
+      detailsButton.addEventListener('click', () => {
+        const currentProduct: Product = {
+          id: item.id,
+          title: item.title,
+          description: item.description,
+          price: item.price,
+          discountPercentage: item.discountPercentage,
+          rating: item.rating,
+          stock: item.stock,
+          brand: item.brand,
+          category: item.category,
+          thumbs: item.thumbs,
+          images: item.images,
+        }
+        App.setCurrentProduct(currentProduct);
+        const currentURL = document.URL;
+        let newURL = currentURL.slice(0, currentURL.lastIndexOf('/'));
+        newURL += `/#${PageIds.ProductDescriptionPage}`;
+        document.location = newURL;
+      })*/
     }
   }
 
