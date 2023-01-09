@@ -12,7 +12,7 @@ const PagesContent = {
           </h2>
         </div>
         <div class="cart">
-          <img src="../assets/cart.png" alt="cart"/>
+          <img src="../../../assets/cart.png" alt="cart"/>
           <span class="product-count">0</span>
         </div>
       </div>
