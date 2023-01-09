@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
 @import url(../src/pages/main-page/index.css);
 @import url(../src/pages/product-description-page/index.css); 
 @import url(../src/pages/cart/index.css); 
 @import url(../src/pages/404-page/index.css); 
 @import url(../src/pages/404-page/index.css); 
+
+html {
+font-family: 'Philosopher', sans-serif;
+}
