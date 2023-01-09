@@ -11,6 +11,7 @@ export const enum PageIds {
   MainPage = 'main-page',
   CartPage = 'cart-page',
   ProductDescriptionPage = 'product-description-page',
+  OrderPage = 'order-page',
 }
 
 class App {
@@ -48,7 +49,10 @@ class App {
       page = new CartPage(idPage);
     } else if (idPage === PageIds.ProductDescriptionPage) {
       page = new ProductDescriptionPage(idPage);
-    } else {
+    } /*else if (idPage === PageIds.OrderPage) {
+      page = new OrderPage(idPage);
+    }*/
+    else {
       page = new ErrorPage(idPage);
     }
 
@@ -65,6 +69,9 @@ class App {
       App.showCartList();
     } else if (idPage === PageIds.ProductDescriptionPage) {
       App.showProductData();
+    }
+    else if (idPage === PageIds.OrderPage) {
+      App.checkOrderPage();
     }
   }
 
@@ -95,7 +102,8 @@ class App {
       newURL += `/#${PageIds.CartPage}`;
       document.location = newURL;
     })
-
+    const stat = document.querySelector('.stat');
+    stat!.textContent = `Found: ${Goods.length}`;
     for (const item of Goods) {
       const itemCard = document.createElement('div');
       itemCard.className = 'big-item-card';
@@ -354,100 +362,32 @@ class App {
       amountControl.className = "amount-control";
       amountControl.textContent = `$${item.price}`;
       numberControl.append(amountControl);
-    
-      this.showHeaderInfo();
-/*
-      const category = document.createElement('p');
-      category.innerHTML = `<span>Category: </span>${item.category}`;
-      itemInfoItem.append(category);
-      const brand = document.createElement('p');
-      brand.innerHTML = `<span>Brand: </span>${item.brand}`;
-      itemInfoItem.append(brand);
-      const price = document.createElement('p');
-      price.innerHTML = `<span>Price: </span>${item.price}`;
-      itemInfoItem.append(price);
-      const discount = document.createElement('p');
-      discount.innerHTML = `<span>Discount: </span>${item.discountPercentage}`;
-      itemInfoItem.append(discount);
-      const rating = document.createElement('p');
-      rating.innerHTML = `<span>Rating: </span>${item.rating}`;
-      itemInfoItem.append(rating);
-      const stock = document.createElement('p');
-      stock.innerHTML = `<span>Stock: </span>${item.stock}`;
-      itemInfoItem.append(stock);
-
-      const itemButtons = document.createElement('div');
-      itemButtons.className = 'item-buttons';
-      itemWrapper.append(itemButtons);
-      const addToCartButton = document.createElement('button');
-      addToCartButton.className = 'add-to-cart-button';
-      //addToCartButton.textContent = 'ADD TO CART';
-      if (App.cart.isInCart(item.id)) {
-        addToCartButton.textContent = 'DROP TO CART'
-      } else {
-        addToCartButton.textContent = 'ADD TO CART';
-      }
-      itemButtons.append(addToCartButton);
-      addToCartButton.addEventListener('click', () => {
-        const currentProduct: Product = {
-          id: item.id,
-          title: item.title,
-          description: item.description,
-          price: item.price,
-          discountPercentage: item.discountPercentage,
-          rating: item.rating,
-          stock: item.stock,
-          brand: item.brand,
-          category: item.category,
-          thumbs: item.thumbs,
-          images: item.images,
-        }
-        if (addToCartButton.textContent === 'ADD TO CART') {
-          App.cart.addAmount();
-          App.cart.addSum(currentProduct.price);
-          addToCartButton.textContent = 'DROP TO CART'
-          App.cart.addProduct(currentProduct);
-        }
-        else {
-          App.cart.removeAmount();
-          App.cart.removeSum(currentProduct.price);
-          addToCartButton.textContent = 'ADD TO CART';
-          App.cart.removeProduct(currentProduct.id);
-        }
-        App.showHeaderInfo();
-      })
-      const detailsButton = document.createElement('button');
-      detailsButton.className = 'details-button';
-      detailsButton.textContent = 'DETAILS';
-      itemButtons.append(detailsButton);
-      detailsButton.addEventListener('click', () => {
-        const currentProduct: Product = {
-          id: item.id,
-          title: item.title,
-          description: item.description,
-          price: item.price,
-          discountPercentage: item.discountPercentage,
-          rating: item.rating,
-          stock: item.stock,
-          brand: item.brand,
-          category: item.category,
-          thumbs: item.thumbs,
-          images: item.images,
-        }
-        App.setCurrentProduct(currentProduct);
-        const currentURL = document.URL;
-        let newURL = currentURL.slice(0, currentURL.lastIndexOf('/'));
-        newURL += `/#${PageIds.ProductDescriptionPage}`;
-        document.location = newURL;
-      })*/
     }
+      this.showHeaderInfo();
+      const totalAmount = document.querySelector('.total-amount');
+      totalAmount!.innerHTML = `<span>Products: </span>${App.cart.getAmount()}`;
+      const totalPrice = document.querySelector('.total-amount-price');
+      totalPrice!.innerHTML = `<span>Total: </span>$${App.cart.getSum()}`;
+      
+      const buyButton = document.querySelector('#buy');
+      if (buyButton != null) {
+        buyButton?.addEventListener('click', () => {
+       //const currentURL = document.URL;
+       //let newURL = currentURL.slice(0, currentURL.lastIndexOf('/'));
+       // newURL += `/#${PageIds.ProductDescriptionPage}`;
+        document.location = '../pages/cart-modal-window/index.html';
+        })
+      }
+  }
+
+  static checkOrderPage() {
+    /**/
   }
 
   constructor() {
   }
 
   run() {
-    console.log('run App');
     App.renderNewPage('main-page');
     this.enableRouteChange();
   }
