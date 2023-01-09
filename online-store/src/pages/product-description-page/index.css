@@ -12,7 +12,7 @@ body {
 .header {
   display: flex;
   width: 100%;
-  min-height: 10vh;
+  height: 10vh;
   justify-content: center;
   align-items: center;
   background-color: #181a1c;;
@@ -223,7 +223,6 @@ body {
 .footer {
     display: flex;
     width: 100%;
-    margin-top: 8px;
     min-height: 5vh;
     justify-content: center;
     align-items: center;
