@@ -60,6 +60,7 @@ class App {
 
     if (idPage === PageIds.MainPage) {
       App.showProductList();
+      App.showHeaderInfo();
     } else if (idPage === PageIds.CartPage) {
       
     } else if (idPage === PageIds.ProductDescriptionPage) {
@@ -133,7 +134,12 @@ class App {
       itemWrapper.append(itemButtons);
       const addToCartButton = document.createElement('button');
       addToCartButton.className = 'add-to-cart-button';
-      addToCartButton.textContent = 'ADD TO CART';
+      //addToCartButton.textContent = 'ADD TO CART';
+      if (App.cart.isInCart(item.id)) {
+        addToCartButton.textContent = 'DROP TO CART'
+      } else {
+        addToCartButton.textContent = 'ADD TO CART';
+      }
       itemButtons.append(addToCartButton);
       addToCartButton.addEventListener('click', () => {
         const currentProduct: Product = {
@@ -262,11 +268,13 @@ class App {
           App.cart.addAmount();
           App.cart.addSum(App.currentProduct.price);
           addButton.textContent = 'DROP TO CART'
+          App.cart.addProduct(App.currentProduct);
         }
         else {
           App.cart.removeAmount();
           App.cart.removeSum(App.currentProduct.price);
           addButton.textContent = 'ADD TO CART';
+          App.cart.removeProduct(App.currentProduct.id);
         }
         cartAmount!.textContent = `${App.cart.getAmount()}`;
         cartTotalSum!.textContent = `$${App.cart.getSum()}`;

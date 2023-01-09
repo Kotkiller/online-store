@@ -40,6 +40,7 @@ class Cart {
       }  
     this.goods = newGoods;  
     }
+    console.log(this.goods);
   }
   isInCart(productID: number) {
     for (let item of this.goods) {
