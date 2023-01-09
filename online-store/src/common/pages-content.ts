@@ -638,11 +638,11 @@ const PagesContent = {
   </div>
   <div class="total-cart">
       <h2>Summary</h2>
-      <div class="total-price">
+      <div class="total-amount total-price">
           <span>Products:</span>
           12                
       </div>
-      <div class="total-price">
+      <div class="total-amount-price total-price">
           <span>Total: </span>
           $1000.00
       </div>
@@ -778,6 +778,84 @@ ErrorPage:
       </div>
     </footer>
 `,
+orderPage:
+`
+<div class="modal"></div>
+<div class="modal-content">
+  <form id="form" class="form">
+    <h2 class="title">Personal details</h2>
+    <div class="input-details">
+      <input
+        type="text"
+        class="personal-details"
+        placeholder="Name"
+        name="customer-name"
+      />
+      <div class="error-message">error</div>
+    </div>
+    <div class="input-details">
+      <input
+        type="tel"
+        class="personal-details"
+        placeholder="Phone number"
+      />
+      <div class="error-message">error</div>
+    </div>
+    <div class="input-details">
+      <input
+        type="text"
+        class="personal-details"
+        placeholder="Delivery address"
+      />
+      <div class="error-message">error</div>
+    </div>
+    <div class="input-details">
+      <input type="email" class="personal-details" placeholder="E-mail" />
+      <div class="error-message">error</div>
+    </div>
+    <h2 class="title">Credit card details</h2>
+    <div class="card-data">
+      <div class="number">
+        <img
+          class="bank-logo"
+          src="../../assets/visa_logo.png"
+          alt="visa"
+        />
+        <input
+          class="card-details"
+          type="text"
+          placeholder="Card number"
+          name="card-number"
+        />
+      </div>
+      <div class="other-data">
+        <div class="valid-data">
+          VALID:
+          <input
+            class="card-details"
+            type="text"
+            placeholder="Valid Thru"
+            name="card-validity"
+          />
+        </div>
+        <div class="cvv-data">
+          CVV:
+          <input
+            class="card-details"
+            type="text"
+            placeholder="Code"
+            name="card-cvv"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="card-err">Card number - error</div>
+    <div class="card-err">Card valid thru - error</div>
+    <div class="card-err">Card CVV - error</div>
+    <button class="confirm-button">CONFIRM</button>
+  </form>
+</div>
+`
 };
 
 export default PagesContent;
