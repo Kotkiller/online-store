@@ -75,14 +75,14 @@ body {
   font-size: 26px;
 }
 
-.main-cart {
-  min-height: 79.5vh;
+.main-description {
+  min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.main-content-cart {
+.main-content-description {
   width: 80%;
   display: flex;
   justify-content: center;

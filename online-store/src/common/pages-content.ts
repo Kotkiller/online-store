@@ -682,8 +682,8 @@ productDescriptionPage:
 </div>
 </div>
 </header>
-<main class="main-cart">
-<div class="main-content-cart">
+<main class="main-description">
+<div class="main-content-description">
     <div class="link-navigation">
         <span></span>
         <span>>></span>
