@@ -188,7 +188,7 @@ body {
   font-size: 120%;
 }
 
-.item-info-cart{
+.item-info{
   width: 75%;
   height: 100%;
   display: flex;
@@ -196,7 +196,7 @@ body {
   cursor: pointer;
 }
 
-.item-info-cart img {
+.item-info img {
   width: 20%;
   height: 80%;
   border-radius: 0.5rem;

@@ -171,18 +171,19 @@ body {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   text-align: center;
+  font-size: 18px;
 }
 
 .product-detail-item p {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
   color: wheat;
 }
 
 .product-detail-item {
   border-radius: 10px;
-  border: 2px solid orange;
+  border: 1px solid orange;
   margin-top: 5px;
 }
 
