@@ -472,10 +472,11 @@ input[type='range'] {
   cursor: pointer;
 }
 
-.footer {
+.footer-main {
   display: flex;
   width: 100%;
   min-height: 5vh;
+  margin-top: 30px;
   justify-content: center;
   align-items: center;
   background-color: #181a1c;;

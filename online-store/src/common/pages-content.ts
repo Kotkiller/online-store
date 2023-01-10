@@ -12,7 +12,7 @@ const PagesContent = {
           </h2>
         </div>
         <div class="cart">
-          <img src="../../../assets/cart.png" alt="cart"/>
+          <img src="../../assets/cart.png" alt="cart"/>
           <span class="product-count">0</span>
         </div>
       </div>
@@ -585,7 +585,7 @@ const PagesContent = {
         </div>
       </div>
     </main>
-    <footer class="footer">
+    <footer class="footer-main">
       <div class="footer-content">
         <a href="https://github.com/Kotkiller/" target="_blank"
           ><img class="github" src="../../assets/github.svg" alt="github"
