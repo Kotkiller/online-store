@@ -12,7 +12,7 @@ const PagesContent = {
           </h2>
         </div>
         <div class="cart">
-          <img src="../../assets/cart.png" alt="cart"/>
+          <img src="./cart.png" alt="cart"/>
           <span class="product-count">0</span>
         </div>
       </div>
@@ -573,10 +573,10 @@ const PagesContent = {
             </div>
             <div class="view-mode">
               <div class="small-v">
-                <img src="../../assets/small.jpg" alt="small-view">
+                <img src="./small.jpg" alt="small-view">
               </div>
               <div class="big-v">
-                <img src="../../assets/big.jpg" alt="big-view">
+                <img src="./big.jpg" alt="big-view">
               </div>
             </div>
           </div>
@@ -588,11 +588,11 @@ const PagesContent = {
     <footer class="footer-main">
       <div class="footer-content">
         <a href="https://github.com/Kotkiller/" target="_blank"
-          ><img class="github" src="../../assets/github.svg" alt="github"
+          ><img class="github" src="./github.svg" alt="github"
         /></a>
         <h2 class="copyright">Online Store 2022</h2>
         <a href="https://rs.school/js/" target="_blank"
-          ><img class="rss" src="../../assets/rss.svg" alt="rss"
+          ><img class="rss" src="./rss.svg" alt="rss"
         /></a>
       </div>
     </footer>
@@ -610,7 +610,7 @@ const PagesContent = {
     </h2>
   </div>
   <div class="cart">
-    <a href="#cart-page"><img src="../../assets/cart.png" alt="cart" /></a>
+    <a href="#cart-page"><img src="./cart.png" alt="cart" /></a>
     <span class="product-count">0</span>
   </div>
 </div>
@@ -657,11 +657,11 @@ const PagesContent = {
 <footer class="footer">
 <div class="footer-content">
   <a href="https://github.com/Kotkiller/" target="_blank"
-    ><img class="github" src="../../assets/github.svg" alt="github"
+    ><img class="github" src="./github.svg" alt="github"
   /></a>
   <h2 class="copyright">Online Store 2022</h2>
   <a href="https://rs.school/js/" target="_blank"
-    ><img class="rss" src="../../assets/rss.svg" alt="rss"
+    ><img class="rss" src="./rss.svg" alt="rss"
   /></a>
 </div>
 </footer>
@@ -677,7 +677,7 @@ productDescriptionPage:
     <h2 class="cart-total-amount">Cart-total: <span class="cart-total-amount__sum">$0.00</span> </h2>
 </div>
 <div class="cart">
-  <a href="#cart-page"><img src="../../assets/cart.png" alt="cart" /></a>
+  <a href="#cart-page"><img src="./cart.png" alt="cart" /></a>
     <span class="product-count">0</span>
 </div>
 </div>
@@ -737,9 +737,9 @@ productDescriptionPage:
 </main>
 <footer class="footer">
 <div class="footer-content">
-   <a href="https://github.com/Kotkiller/" target="_blank"><img class="github" src="../../assets/github.svg" alt="github"></a> 
+   <a href="https://github.com/Kotkiller/" target="_blank"><img class="github" src="./github.svg" alt="github"></a> 
     <h2 class="copyright">Online Store 2022</h2>
-    <a href="https://rs.school/js/" target="_blank"><img class="rss" src="../../assets/rss.svg" alt="rss"></a> 
+    <a href="https://rs.school/js/" target="_blank"><img class="rss" src="./rss.svg" alt="rss"></a> 
 </div>
 </footer>
 `,
@@ -756,7 +756,7 @@ ErrorPage:
           </h2>
         </div>
         <div class="cart">
-          <a href="#cart-page"><img src="../../assets/cart.png" alt="cart"/></a>
+          <a href="#cart-page"><img src="./cart.png" alt="cart"/></a>
           <span class="product-count">0</span>
         </div>
       </div>
@@ -769,11 +769,11 @@ ErrorPage:
     <footer class="footer">
       <div class="footer-content">
         <a href="https://github.com/Kotkiller/" target="_blank"
-          ><img class="github" src="../../assets/github.svg" alt="github"
+          ><img class="github" src="./github.svg" alt="github"
         /></a>
         <h2 class="copyright">Online Store 2022</h2>
         <a href="https://rs.school/js/" target="_blank"
-          ><img class="rss" src="../../assets/rss.svg" alt="rss"
+          ><img class="rss" src="./rss.svg" alt="rss"
         /></a>
       </div>
     </footer>
@@ -818,7 +818,7 @@ orderPage:
       <div class="number">
         <img
           class="bank-logo"
-          src="../../assets/visa_logo.png"
+          src="./visa_logo.png"
           alt="visa"
         />
         <input
