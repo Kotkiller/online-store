@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const CopyPlugin=require('copy-webpack-plugin');
 
   module.exports = {
     entry: './src/index.ts',
@@ -17,6 +18,10 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
   },
     module: {
       rules: [
+        {
+          test: /\.(jpe?g|png|gif|svg)$/i,
+          type: "asset",
+        },
         {
             test: /\.html$/,
             loader: 'html-loader',
@@ -41,7 +46,49 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
       ],
     },
     plugins: [
+        new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.imageminMinify,
+            options: {
+              // Lossless optimization with custom option
+              // Feel free to experiment with options for better result for you
+              plugins: [
+                ["gifsicle", { interlaced: true }],
+                ["jpegtran", { progressive: true }],
+                ["optipng", { optimizationLevel: 5 }],
+                // Svgo configuration here https://github.com/svg/svgo#configuration
+                [
+                  "svgo",
+                  {
+                    plugins: [
+                      {
+                        name: "preset-default",
+                        params: {
+                          overrides: {
+                            removeViewBox: false,
+                            addAttributesToSVGElement: {
+                              params: {
+                                attributes: [
+                                  { xmlns: "http://www.w3.org/2000/svg" },
+                                ],
+                              },
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                ],
+              ],
+            },
+          },
+        }),
         new CleanWebpackPlugin(),
+        new CopyPlugin({
+          patterns:[
+            {from: path.resolve(__dirname, 'src/assets'), to: path.resolve(__dirname, 'dist')}
+          ]
+        }),
         new HtmlWebpackPlugin({
           template: 'src/index.html',
           filename: 'index.html',
